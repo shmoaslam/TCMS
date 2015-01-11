@@ -74,21 +74,26 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Login", "Index", "Home")</li>
+                    <li>@Ajax.ActionLink("Login", "Login", "Account", new AjaxOptions { UpdateTargetId = "divBody", InsertionMode = InsertionMode.Replace, HttpMethod = "GET" })</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" id="divBody">
         @RenderBody()
+    </div>
+    <div class="container body-content">
         <hr />
         <footer>
+            @DateTime.Now
             <p>&copy; @DateTime.Now.Year - Rihab Tutorial</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajax")
     @Scripts.Render("~/bundles/bootstrap")
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
