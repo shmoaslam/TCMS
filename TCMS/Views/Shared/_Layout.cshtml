@@ -74,15 +74,16 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Ajax.ActionLink("Login", "Login", "Account", new AjaxOptions { UpdateTargetId = "divBody", InsertionMode = InsertionMode.Replace, HttpMethod = "GET" })</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content" id="divBody">
-        @RenderBody()
-    </div>
-    <div class="container body-content">
+    
+    <div class="container body-content" >
+        <div id ="divBody">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             @DateTime.Now
